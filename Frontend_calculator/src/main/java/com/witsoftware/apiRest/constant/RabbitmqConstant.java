@@ -1,6 +1,6 @@
-package com.witsoftware.apiRest.persistents;
+package com.witsoftware.apiRest.constant;
 
-public class RabbitmqPersistents {
+public class RabbitmqConstant {
 	
 	public static final String FILA_SOMA = "FILA_SOMA";
 	public static final String FILA_SUB = "FILA_SUB";

@@ -14,33 +14,59 @@ public class oparationImplementation implements  operationInterface {
 	@Override
 	public String Sum(double a, double b) {
 		
-		double result = a + b;
 		
-		return df.format(result);
+		try {
+				double result = a + b;
+				
+				return df.format(result);
+			}
+		catch(Exception e) {
+			return e.getMessage();
+		}
+		
 	}
 
 	@Override
 	public String Subtraction(double a, double b) {
 
-		double result = a - b;
-		
-		return df.format(result);
+		try {
+
+			double result = a - b;
+			
+			return df.format(result);
+		}
+		catch(Exception e) {
+			return e.getMessage();
+		}
 	}
 
 	@Override
 	public String Multiplication(double a, double b) {
 		
-		double result = a * b;
-		
-		return df.format(result);
+		try {
+			double result = a * b;
+			
+			return df.format(result);
+		}
+		catch(Exception e) {
+			return e.getMessage();
+		}
 	}
 
 	@Override
 	public String Division(double a, double b) {
 		
-		double result = a / b;
-		
-		return df.format(result);
+		try {
+			if (b != 0) {
+				double result = a / b;
+				return df.format(result);
+			}else
+				return "O divisor não pode ser 0. Adicione outro valor";
+							
+		}
+		catch(Exception e) {
+			return e.getMessage();
+		}
 	}
 
 	

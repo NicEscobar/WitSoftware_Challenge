@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.witsoftware.apiRest.constant.RabbitmqConstant;
 import com.witsoftware.apiRest.implementation.oparationImplementation;
 import com.witsoftware.apiRest.service.RabbitmqService;
-
-import com.witsoftware.apiRest.persistents.RabbitmqPersistents;
 
 @RestController
 public class operationController {
@@ -26,7 +25,7 @@ public class operationController {
 				
 		String result = operationImp.Sum(a,b);
 		
-		this.rabbitmqService.enviaMsg(RabbitmqPersistents.FILA_SOMA, result);
+		this.rabbitmqService.enviaMsg(RabbitmqConstant.FILA_SOMA, result);
 		
 		return HttpStatus.OK;
 	}
@@ -36,7 +35,7 @@ public class operationController {
 		
 		String result = operationImp.Subtraction(a,b);
 		
-		this.rabbitmqService.enviaMsg(RabbitmqPersistents.FILA_SOMA, result);
+		this.rabbitmqService.enviaMsg(RabbitmqConstant.FILA_SUB, result);
 		
 		return HttpStatus.OK;
 	}
@@ -46,7 +45,7 @@ public class operationController {
 		
 		String result = operationImp.Multiplication(a,b);
 		
-		this.rabbitmqService.enviaMsg(RabbitmqPersistents.FILA_SOMA, result);
+		this.rabbitmqService.enviaMsg(RabbitmqConstant.FILA_MULT, result);
 		
 		return HttpStatus.OK;
 	}
@@ -55,7 +54,7 @@ public class operationController {
 		
 		String result = operationImp.Division(a,b);
 		
-		this.rabbitmqService.enviaMsg(RabbitmqPersistents.FILA_SOMA, result);
+		this.rabbitmqService.enviaMsg(RabbitmqConstant.FILA_DIV, result);
 		
 		return HttpStatus.OK;
 	}
